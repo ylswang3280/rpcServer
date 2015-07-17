@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weclome</title>
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io.connect('http://localhost:3000');
+    socket.emit('message', {msg: {uid: 'roy'}, route: 'entryHandler.entry', channel: 'peach'});
+    socket.on('message', function(data){
+        console.log(data.msg);
+    });
+</script>
+<body>
+
+</body>
+</html>
